@@ -71,7 +71,7 @@ h1 {
   }
 
 .menu-text {
-  font-size: 6rem;
+  font-size: 5.4rem;
   font-weight: 1000;
 }
 
@@ -83,14 +83,14 @@ h1 {
   width: 10rem;
   height: 10rem;
   color: var(--yellow);
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 1000;
   background-color: rgb(95, 64, 89);
   border: 1rem inset rgb(187, 102, 150);
 }
 
 .button:hover {
-  background-color: rgb(242, 134, 196);
+  /* background-color: rgb(95, 64, 89); */
 
 }
 
@@ -101,17 +101,27 @@ h1 {
   box-shadow: 2px -4px 4px rgb(0, 0, 0, 0.3);
 }
 
+.enter-name {
+  position: absolute;
+  font-size: 3.1rem;
+  width: 32rem;
+  color: var(--foreground);
+  top: 6rem;
+  left: -0.8rem;
+  /* background-color: rgb(91, 60, 85, 0.4); */
+}
+
 .get-name {
   position: absolute;
-  width: 22rem;
-  height: 3rem;
-  left: 4rem;
-  top: 13.5rem;
+  width: 32rem;
+  height: 5rem;
+  left: -1rem;
+  top: 12.5rem;
   background-color: var(--foreground);
   color: var(--current-line);
   outline: none;
   border-radius: 1rem;
-  box-shadow: 0rem 0rem 3rem rgb(40, 42, 54);
+  box-shadow: 1rem 1rem 2rem rgb(40, 42, 54);
   font-size: 2rem;
   padding: 1rem;
 }
