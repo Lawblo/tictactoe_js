@@ -48,26 +48,58 @@ const webElements = (() => {
     button.remove();
   }
 
-  const removeInput = () => {
+  const _removeInput = () => {
     const button = document.querySelector('.button');
     button.remove();
 
-    const input = document.querySelector('.get-name')
-    input.remove()
+    const inputs = document.querySelectorAll('.get-name')
+    for (let input of inputs) {
+      input.remove();
+    }
+  }
+
+  const _storePlayers = () => {
+    const playerOneName = document.getElementById('playerOne').value
+    const playerTwoName = document.getElementById('playerTwo').value
+    Game.addPlayers(playerOneName, playerTwoName);
+    _displayPlayers();
   }
 
   const _addUserInput = () => {
     const gameBoard = document.querySelector('.gameBoard')
 
-    const userInput = document.createElement('input')
-    userInput.classList.add('get-name');
-    userInput.setAttribute('placeholder', 'enter playername')
-    gameBoard.appendChild(userInput);
+    const playerOne = document.createElement('input')
+    playerOne.classList.add('get-name');
+    playerOne.setAttribute('placeholder', 'player one')
+    playerOne.setAttribute('id', 'playerOne')
+    gameBoard.appendChild(playerOne);
 
-    const button = _createButton('confirm name');
+    const playerTwo = document.createElement('input');
+    playerTwo.classList.add('get-name');
+    playerTwo.setAttribute('placeholder', 'player two');
+    playerTwo.setAttribute('id', 'playerTwo')
+    gameBoard.appendChild(playerTwo);
+
+    const button = _createButton('confirm names');
     button.classList.add('confirm');
 
-    button.addEventListener('click', removeInput)
+
+    button.addEventListener('click', _storePlayers)
+    button.addEventListener('click', _removeInput)
+  }
+
+  const _playerDisplay = (playerName, idName) => {
+    const gameBoard = document.querySelector('.gameBoard');
+    const player = document.createElement('div');
+    player.classList.add('player-display');
+    player.setAttribute('id', idName);
+    player.textContent = playerName.name;
+    gameBoard.appendChild(player);
+  }
+
+  const _displayPlayers = () => {
+    _playerDisplay(Game.players[0], 'playerOneDisplay');
+    _playerDisplay(Game.players[1], 'playerTwoDisplay');
   }
 
 
@@ -81,14 +113,13 @@ const Game = (() => {
   Board.newBoard();
 
   let players = []
-  players.push(Player('p1', 'X'), Player('p2', 'O'));
 
-
-
-
-
+  const addPlayers = (playerOne, playerTwo) => {
+    Game.players = [Player(playerOne, 'X'), Player(playerTwo, 'O')]
+  }
 
   return {
-    players
+    players,
+    addPlayers
   }
 })();
