@@ -1,0 +1,117 @@
+:root {
+  --yellow: rgb(241, 250, 140);
+  --foreground: rgb(248, 248, 242);
+  --comment: rgb(98, 114, 164);
+  --current-line: rgb(68, 71, 90);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Input Mono;
+  font-size: 16px;
+  user-select: none;
+}
+
+body {
+  height: 100vh;
+  background-color: rgb(40, 42, 54);
+}
+
+.wrapper {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+
+  background-color: rgb(95, 64, 89, 0.6);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: var(--yellow);
+  font-size: 10rem;
+}
+
+.gameBoard {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 10rem);
+  grid-template-rows: repeat(3, 10rem);
+
+  border: 2rem inset rgb(201, 113, 163);
+  border-radius: 1rem;
+
+  box-shadow: 0rem 0rem 2rem rgb(39, 23, 36);
+}
+
+.gameBoard > :nth-child(2n + 1) {
+  background-color: rgb(242, 134, 196);
+}
+
+.boardSquare {
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.boardSquare p {
+  color: var(--yellow);
+}
+
+.symbol {
+  font-size: 10rem;
+  }
+
+.menu-text {
+  font-size: 6rem;
+  font-weight: 1000;
+}
+
+#square7 {
+  position: relative;
+}
+
+.button {
+  width: 10rem;
+  height: 10rem;
+  color: var(--yellow);
+  font-size: 2rem;
+  font-weight: 1000;
+  background-color: rgb(95, 64, 89);
+  border: 1rem inset rgb(187, 102, 150);
+}
+
+.button:hover {
+  background-color: rgb(242, 134, 196);
+
+}
+
+.button:active {
+  background-color: rgb(91, 60, 85);
+  position: absolute;
+  top: 1px;
+  box-shadow: 2px -4px 4px rgb(0, 0, 0, 0.3);
+}
+
+.get-name {
+  position: absolute;
+  width: 22rem;
+  height: 3rem;
+  left: 4rem;
+  top: 13.5rem;
+  background-color: var(--foreground);
+  color: var(--current-line);
+  outline: none;
+  border-radius: 1rem;
+  box-shadow: 0rem 0rem 3rem rgb(40, 42, 54);
+  font-size: 2rem;
+  padding: 1rem;
+}
