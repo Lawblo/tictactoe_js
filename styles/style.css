@@ -67,6 +67,7 @@ h1 {
 
 .symbol {
   font-size: 10rem;
+  color: var(--yellow);
   }
 
 .menu-text {
@@ -141,9 +142,14 @@ h1 {
   top: 10rem;
   color: var(--yellow);
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
+  flex-direction: column;
+  /* text-align: center; */
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+
+.player-display p {
+  font-size: 1.2rem;
 }
 
 #playerOneDisplay {
@@ -152,4 +158,23 @@ h1 {
 
 #playerTwoDisplay {
   right: -18rem;
+}
+
+.win {
+  border: 10px solid rgb(0, 255, 0);
+}
+
+.reset-btn {
+  position: absolute;
+  height: 10rem;
+  width: 10rem;
+  top: 10rem;
+  left: 10rem;
+  background-color: rgb(242, 134, 196);
+  /* border:  */
+}
+
+.reset-btn:active {
+  top: 10.1rem;
+  background-color: rgb(211, 123, 173);
 }
