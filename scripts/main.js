@@ -180,6 +180,11 @@ const webElements = (() => {
         boardSquare.classList.remove('win');
       }
       newGameElements();
+
+      let displayPlayers = document.querySelectorAll('.player-display');
+      for (let display of displayPlayers) {
+        display.remove();
+      }
     })
   }
 
